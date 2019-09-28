@@ -7,6 +7,9 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "ddelete": "index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/simonknittel/ddelte.git"
@@ -24,5 +27,8 @@
     "inquirer": "^7.0.0",
     "inquirer-prompt-suggest": "^0.1.0",
     "trash": "^6.0.0"
+  },
+  "engines": {
+    "node": ">= 10.13.0"
   }
 }

@@ -1,0 +1,5 @@
+# https://docs.npmjs.com/misc/developers#keeping-files-out-of-your-package
+.gitignore
+.travis.yml
+README.md
+.npmignore

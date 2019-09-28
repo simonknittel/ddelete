@@ -1,3 +1,5 @@
+#! /usr/bin/env node
+
 const inquirer = require('inquirer')
 const globby = require('globby')
 const fs = require('fs')
