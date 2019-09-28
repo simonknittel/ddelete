@@ -3,3 +3,9 @@
 .travis.yml
 README.md
 .npmignore
+.nvmrc
+.npmrc
+.github
+node_modules
+renovate.json
+.editorconfig
