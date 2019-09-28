@@ -13,3 +13,4 @@ Lists all occurrences of a file or directory and let's you delete them
 ```
 npx ddelete
 ```
+![Screencast](screencast.gif)
