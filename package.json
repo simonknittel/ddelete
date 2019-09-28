@@ -1,0 +1,28 @@
+{
+  "name": "ddelete",
+  "version": "1.0.0",
+  "description": "Lists all occurrences of a searched file or directory and let's you delete them'",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonknittel/ddelte.git"
+  },
+  "author": "Simon Knittel <hallo@simonknittel.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simonknittel/ddelte/issues"
+  },
+  "homepage": "https://github.com/simonknittel/ddelte#readme",
+  "dependencies": {
+    "del": "^5.1.0",
+    "filesize": "^4.2.1",
+    "globby": "^10.0.1",
+    "inquirer": "^7.0.0",
+    "inquirer-prompt-suggest": "^0.1.0",
+    "trash": "^6.0.0"
+  }
+}
