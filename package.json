@@ -1,7 +1,7 @@
 {
   "name": "ddelete",
   "version": "1.0.0",
-  "description": "Lists all occurrences of a searched file or directory and let's you delete them'",
+  "description": "Lists all occurrences of a file or directory and let's you delete them",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

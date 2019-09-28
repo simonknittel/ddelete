@@ -6,6 +6,8 @@
 [![David](https://img.shields.io/david/simonknittel/ddelete)](https://david-dm.org/simonknittel/ddelete)
 [![NPM](https://img.shields.io/npm/l/ddelete)](https://github.com/simonknittel/ddelete/blob/master/LICENSE)
 
+Lists all occurrences of a file or directory and let's you delete them
+
 ## Usage
 
 ```
