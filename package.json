@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/simonknittel/ddelte.git"
+    "url": "git+https://github.com/simonknittel/ddelete.git"
   },
   "author": "Simon Knittel <hallo@simonknittel.de>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/simonknittel/ddelte/issues"
+    "url": "https://github.com/simonknittel/ddelete/issues"
   },
-  "homepage": "https://github.com/simonknittel/ddelte#readme",
+  "homepage": "https://github.com/simonknittel/ddelete#readme",
   "dependencies": {
     "del": "^5.1.0",
     "filesize": "^4.2.1",
