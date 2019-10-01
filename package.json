@@ -1,11 +1,15 @@
 {
   "name": "ddelete",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Lists all occurrences of a file or directory and let's you delete them",
   "keywords": [
     "cli",
+    "node",
     "nodejs",
-    "utility"
+    "utility",
+    "delete",
+    "remove",
+    "cleanup"
   ],
   "main": "index.js",
   "scripts": {
