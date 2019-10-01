@@ -7,21 +7,21 @@ const removeFileSize = utils.removeFileSize
 const mockAB = path.join(process.cwd(), 'mocks', 'a', 'b')
 const mockABB = path.join(process.cwd(), 'mocks', 'a', 'b', 'b')
 const mockB = path.join(process.cwd(), 'mocks', 'b')
-
-console.log([
-  mockAB,
-  mockB,
-])
+const mockBBA = path.join(process.cwd(), 'mocks', 'bb', 'a')
+const mockBBB = path.join(process.cwd(), 'mocks', 'bb', 'b')
 
 test('filterFiles', () => {
   expect(filterFiles([
     mockAB,
     mockABB,
     mockB,
+    mockBBA,
+    mockBBB,
   ], 'b'))
   .toStrictEqual([
     mockAB,
     mockB,
+    mockBBB,
   ])
 })
 

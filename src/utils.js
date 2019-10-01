@@ -1,4 +1,5 @@
 const globby = require('globby')
+const path = require('path')
 const fs = require('fs')
 const filesize = require('filesize')
 const trash = require('trash')
@@ -13,7 +14,8 @@ async function findFiles(filename) {
 
 function filterFiles(files, filename) {
   return files.filter(file => {
-    return file.indexOf(filename) === file.length - filename.length
+    if (file.match(new RegExp(`\\${path.sep}${filename}\\${path.sep}`))) return false
+    return file.lastIndexOf(filename) === file.length - filename.length
   })
 }
 
