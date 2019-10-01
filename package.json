@@ -2,7 +2,11 @@
   "name": "ddelete",
   "version": "1.0.2",
   "description": "Lists all occurrences of a file or directory and let's you delete them",
-  "keywords": ["cli", "nodejs", "utility"],
+  "keywords": [
+    "cli",
+    "nodejs",
+    "utility"
+  ],
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -23,7 +27,7 @@
   "homepage": "https://github.com/simonknittel/ddelete#readme",
   "dependencies": {
     "del": "^5.1.0",
-    "filesize": "^4.2.1",
+    "filesize": "^5.0.1",
     "globby": "^10.0.1",
     "inquirer": "^7.0.0",
     "inquirer-prompt-suggest": "^0.1.0",
