@@ -9,58 +9,73 @@ const del = require('del')
 
 inquirer.registerPrompt('suggest', require('inquirer-prompt-suggest'))
 
-inquirer
-  .prompt([
-    {
-      type: 'suggest',
-      message: 'Enter the name of the file or directory you want to delete:',
-      name: 'filename',
-      suggestions: ['.DS_Store', 'node_modules', 'Thumbs.db', 'desktop.ini'],
-    }
-  ])
-  .then(async ({filename}) => {
-    // TODO: Display loady
+requestFilename()
 
-    let files = await findFiles(filename)
-    files = filterFiles(files, filename)
-    files = appendFileSize(files)
+function requestFilename() {
+  inquirer
+    .prompt([
+      {
+        type: 'suggest',
+        message: 'Enter the name of the file or directory you want to delete:',
+        name: 'filename',
+        suggestions: ['.DS_Store', 'node_modules', 'Thumbs.db', 'desktop.ini'],
+      }
+    ])
+    .then(requestWhichFilesToDelete)
+}
 
-    // TODO: Hide loady
+async function requestWhichFilesToDelete({filename}) {
+  // TODO: Display loady
 
-    inquirer
-      .prompt([
-        {
-          type: 'checkbox',
-          message: 'Select the files you want to delete:',
-          name: 'filesToDelete',
-          choices: files,
-        }
-      ])
-      .then(({filesToDelete}) => {
-        const cleanedPaths = removeFileSize(filesToDelete)
+  let files = await findFiles(filename)
 
-        inquirer
-          .prompt([
-            {
-              type: 'list',
-              message: 'Move files to trash or delete permanently?',
-              name: 'method',
-              choices: [
-                'Move to trash',
-                'Delete permanently',
-              ],
-            }
-          ])
-          .then(async ({method}) => {
-            // TODO: Show loady
+  if (files.length === 0) {
+    console.log('No files found.')
+    requestFilename()
+    return
+  }
 
-            await deleteFiles(cleanedPaths, method)
+  files = filterFiles(files, filename)
+  files = appendFileSize(files)
 
-            // TODO: Hide loady
-            console.log('Done!')
-          })
-      })
-  })
+  // TODO: Hide loady
+
+  inquirer
+    .prompt([
+      {
+        type: 'checkbox',
+        message: 'Select the files you want to delete:',
+        name: 'filesToDelete',
+        choices: files,
+      }
+    ])
+    .then(requestMethod)
+}
+
+function requestMethod({filesToDelete}) {
+  const cleanedPaths = removeFileSize(filesToDelete)
+
+  inquirer
+    .prompt([
+      {
+        type: 'list',
+        message: 'Move files to trash or delete permanently?',
+        name: 'method',
+        choices: [
+          'Move to trash',
+          'Delete permanently',
+        ],
+      }
+    ])
+    .then(async ({method}) => {
+      // TODO: Show loady
+
+      await deleteFiles(cleanedPaths, method)
+
+      // TODO: Hide loady
+      console.log('Done!')
+    })
+}
 
 async function findFiles(filename) {
   return await globby(['**/' + filename], {
