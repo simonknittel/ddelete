@@ -8,6 +8,11 @@ const mockAB = path.join(process.cwd(), 'mocks', 'a', 'b')
 const mockABB = path.join(process.cwd(), 'mocks', 'a', 'b', 'b')
 const mockB = path.join(process.cwd(), 'mocks', 'b')
 
+console.log([
+  mockAB,
+  mockB,
+])
+
 test('filterFiles', () => {
   expect(filterFiles([
     mockAB,
@@ -25,9 +30,9 @@ test('appendFileSize', () => {
     mockAB,
     mockB,
   ]))
-  .toStrictEqual([
-    mockAB + ' (0 B)',
-    mockB + ' (0 B)',
+  .toMatchObject([
+    expect.stringMatching(/.+\(.+\)/),
+    expect.stringMatching(/.+\(.+\)/),
   ])
 })
 
