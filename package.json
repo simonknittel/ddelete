@@ -1,6 +1,6 @@
 {
   "name": "ddelete",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Lists all occurrences of a file or directory and let's you delete them",
   "keywords": [
     "cli",
