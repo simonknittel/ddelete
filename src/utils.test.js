@@ -1,28 +1,43 @@
+const path = require('path')
 const utils = require('./utils')
 const filterFiles = utils.filterFiles
+const appendFileSize = utils.appendFileSize
 const removeFileSize = utils.removeFileSize
+
+const mockAB = path.join(process.cwd(), 'mocks', 'a', 'b')
+const mockABB = path.join(process.cwd(), 'mocks', 'a', 'b', 'b')
+const mockB = path.join(process.cwd(), 'mocks', 'b')
 
 test('filterFiles', () => {
   expect(filterFiles([
-    'C:/projectA/node_modules',
-    'C:/projectA/node_modules/packageA/node_modules',
-    'C:/projectB/node_modules',
-  ], 'node_modules'))
+    mockAB,
+    mockABB,
+    mockB,
+  ], 'b'))
   .toStrictEqual([
-    'C:/projectA/node_modules',
-    'C:/projectB/node_modules',
+    mockAB,
+    mockB,
+  ])
+})
+
+test('appendFileSize', () => {
+  expect(appendFileSize([
+    mockAB,
+    mockB,
+  ]))
+  .toStrictEqual([
+    mockAB + ' (0 B)',
+    mockB + ' (0 B)',
   ])
 })
 
 test('removeFileSize', () => {
   expect(removeFileSize([
-    'C:/projectA/node_modules (10 B)',
-    'C:/projectA/node_modules/packageA/node_modules (10.4 KB)',
-    'C:/projectB/node_modules (100.4 MB)',
-  ], 'node_modules'))
+    mockAB + ' (10 B)',
+    mockB + ' (100.4 MB)',
+  ]))
   .toStrictEqual([
-    'C:/projectA/node_modules',
-    'C:/projectA/node_modules/packageA/node_modules',
-    'C:/projectB/node_modules',
+    mockAB,
+    mockB,
   ])
 })
