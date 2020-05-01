@@ -31,7 +31,7 @@
   "homepage": "https://github.com/simonknittel/ddelete#readme",
   "dependencies": {
     "del": "^5.1.0",
-    "filesize": "^6.0.0",
+    "filesize": "^6.1.0",
     "globby": "^11.0.0",
     "inquirer": "^7.1.0",
     "inquirer-prompt-suggest": "^0.1.0",
