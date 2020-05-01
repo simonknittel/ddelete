@@ -14,7 +14,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "jest"
+    "test": "jest",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "bin": {
     "ddelete": "index.js"
@@ -35,12 +37,14 @@
     "globby": "^11.0.0",
     "inquirer": "^7.1.0",
     "inquirer-prompt-suggest": "^0.1.0",
-    "trash": "^6.0.0"
+    "trash": "^6.0.0",
+    "snyk": "^1.316.1"
   },
   "engines": {
     "node": ">= 10.13.0"
   },
   "devDependencies": {
     "jest": "24.9.0"
-  }
+  },
+  "snyk": true
 }
