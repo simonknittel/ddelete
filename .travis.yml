@@ -1,7 +1,7 @@
 language: node_js
 node_js:
+  - lts/erbium
   - lts/dubnium
-  - lts/carbon
 install:
   - npm ci
 script: npm test
