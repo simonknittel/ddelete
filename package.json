@@ -41,6 +41,6 @@
     "node": ">= 10.13.0"
   },
   "devDependencies": {
-    "jest": "26.6.0"
+    "jest": "26.6.1"
   }
 }
