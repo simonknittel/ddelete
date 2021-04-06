@@ -35,7 +35,7 @@
     "globby": "^11.0.2",
     "inquirer": "^8.0.0",
     "inquirer-prompt-suggest": "^0.1.0",
-    "trash": "^7.1.0"
+    "trash": "^7.1.1"
   },
   "engines": {
     "node": ">= 10.13.0"
