@@ -32,7 +32,7 @@
   "dependencies": {
     "del": "^6.0.0",
     "filesize": "^8.0.0",
-    "globby": "^11.0.2",
+    "globby": "^13.0.0",
     "inquirer": "^8.0.0",
     "inquirer-prompt-suggest": "^0.1.0",
     "trash": "^7.1.1"
